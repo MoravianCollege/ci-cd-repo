@@ -16,4 +16,4 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: ssh -i deploy_rsa ubuntu@3.16.42.52 'touch done'
+  script: ssh -i deploy_rsa ubuntu@3.16.42.52 'source /home/ubuntu/ci-cd-repo/scripts/deploy.sh'
