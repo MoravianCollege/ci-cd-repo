@@ -1,4 +1,4 @@
 
 
 def go():
-    return 42
+    return 'Hello, World!'
