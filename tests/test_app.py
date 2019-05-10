@@ -7,4 +7,4 @@ def test_get_go():
     client = app.test_client()
 
     result = client.get('/go')
-    assert b'42' in result.data
+    assert b'Hello World!' in result.data
