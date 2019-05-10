@@ -5,6 +5,13 @@ install:
 - pip install -r requirements.txt
 - python setup.py install
 script: pytest
+addons:
+  ssh_known_hosts: 3.16.42.52
 before_install:
 - openssl aes-256-cbc -K $encrypted_f1cee75f37b0_key -iv $encrypted_f1cee75f37b0_iv
   -in deploy_rsa.enc -out deploy_rsa -d
+before_deploy:
+  - chmod 600 deploy_rsa
+deploy:
+  provider: script
+  script ssh -i deploy_rsa ubuntu@3.16.42.52 'touch done'
