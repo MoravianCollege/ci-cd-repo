@@ -32,7 +32,7 @@ web browser, point to `<IP>/go`, and you should receive `Hello, World!`  Termina
 
 * The file `.travis.yml` tells Travis-CI to install the requirements and then execute pytest.
 
-  ```
+```
 dist: xenial
 language: python
 python: 3.7
@@ -40,7 +40,7 @@ install:
 - pip install -r requirements.txt
 - python setup.py install
 script: pytest
-  ```
+```
 
 * Other than configuring Travis-CI, no additional setup is required.  
 
@@ -56,7 +56,7 @@ unencrypted version!!!
 * The following is the rest of `.travis.yml`.  Change the IP in `ssh_known_hosts` and `script`, and edit the 
 path in `script` - both to match the server setup.
 
-  ```
+```
 addons:
   ssh_known_hosts:
   - 3.16.42.52
@@ -67,5 +67,5 @@ deploy:
   provider: script
   skip_cleanup: true
   script: ssh -i deploy_rsa ubuntu@3.16.42.52 'source /home/ubuntu/ci-cd-repo/scripts/deploy.sh'
-  ```
+```
   
